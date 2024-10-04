@@ -1,0 +1,31 @@
+<html>
+<body>
+
+    <h1>{{post.title}}</h1>
+    <ul>
+        <h3>By: {{post.author.name}}</h3>
+        <p>{{post.content}}</p>
+    </ul>
+    <div>
+        <form action='comment' method='post'>{% csrf_token %}
+            <h4>Leave a comment:
+                <input type="text" name="content" value=""><br>
+            </h4>
+            <h5>Author:
+                <input type="text" name="user_id" value=""><br>
+            </h5>
+
+            <input type="submit" value="Submit">
+        </form>
+
+        <h4> Comments: </h4>
+        <ul>
+            {% for comment in comments %}
+                <h5>By: {{comment.author.name}}</h5>
+                <p>{{comment.content}}</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+</html>

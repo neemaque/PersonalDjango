@@ -1,0 +1,15 @@
+<html>
+<body>
+
+    <h1>Name: {{profile.user.name}}</h1>
+    <h3>Bio: {{profile.bio}}</h3>
+    <div>
+        <h4> Followers: </h4>
+        <ul>
+            {% for follow in followers %}
+                <h5>{{follow.Follower.name}}</h5>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
