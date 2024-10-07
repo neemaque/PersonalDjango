@@ -11,5 +11,17 @@
             {% endfor %}
         </ul>
     </div>
+    <form action='follow/' method='post'>{% csrf_token %}
+        <h3>User:
+            <input type="text" name="follower_id" value="">
+        </h3>
+        <input type="submit" value="Follow">
+    </form>
+    <form action='unfollow/' method='post'>{% csrf_token %}
+        <h3>User:
+            <input type="text" name="follower_id" value="">
+        </h3>
+        <input type="submit" value="Unfollow">
+    </form>
 </body>
 </html>
