@@ -84,6 +84,7 @@ def register(request):
         user = User(name=name)
         user.save()
         bio = request.POST.get('bio')
-        profile = Profile(user=user, bio=bio)
+        profile_picture = request.POST.get('profile_picture')
+        profile = Profile(user=user, bio=bio, profile_picture=profile_picture)
         profile.save()
         return HttpResponse("Success!")

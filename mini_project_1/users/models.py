@@ -8,7 +8,7 @@ class User(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     bio = models.TextField(default="Hi")
-    profile_picture = models.ImageField
+    profile_picture = models.ImageField(default='default.jpg', blank=True)
 
 class Follow(models.Model):
     Follower = models.ForeignKey(User, on_delete=models.CASCADE, related_name='Follower')
